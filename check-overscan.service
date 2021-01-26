@@ -1,0 +1,12 @@
+[Unit]
+Description=Check `config.txt` for `disable_overscan=1` and add it if missing              
+DefaultDependencies=no
+Before=shutdown.target reboot.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/check-overscan
+TimeoutStartSec=0
+
+[Install]
+WantedBy=shutdown.target reboot.target
