@@ -6,7 +6,8 @@ on Raspberry Pis running Debian-based systems.
 This simply does what it says on the tin. The shell script `check-overscan.sh` does the "hard"
 work of iterating over the lines of `/boot/firmware/config.txt` and adding
 `disable_overscan=1` if it's not found. The unit file `check-overscan.service`
-just lets systemd know what's up.
+just tells systemd that we want to run this check on poweroff or reboot, as
+vanilla Debian overwrites `config.txt` on kernel upgrades.
 
 ## Installation
 You should be able to simply run `install.sh` with privileges (eg `sudo sh install.sh`) and everything
