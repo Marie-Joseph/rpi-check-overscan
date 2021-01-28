@@ -18,16 +18,16 @@ made to `config.txt`. This script and service make sure you don't forget to add 
 
 ## How (Usage)
 To install the service, simply download this repository (such as cloning it with git), enter it,
-and run `install.sh`.
+and run `install.sh` with root privileges.
 ```
 git clone https://github.com/Marie-Joseph/rpi-check-overscan.git
 cd rpi-check-overscan
-sh install.sh
+sudo sh install.sh
 ```
 To uninstall it, simply run `install.sh` again with `--uninstall` or `-u`.
 ```
 cd rpi-check-overscan
-sh install.sh --uninstall
+sudo sh install.sh --uninstall
 ```
 
 Note that on Raspberry Pi OS, the Raspberry Pi Foundation's spin of Debian, the
