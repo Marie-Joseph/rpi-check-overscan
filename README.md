@@ -33,3 +33,15 @@ sudo sh install.sh --uninstall
 Note that on Raspberry Pi OS, the Raspberry Pi Foundation's spin of Debian, the
 path to `config.txt` is slightly different. For these cases, simply edit the
 path for `configFile` in `check-overscan.sh` with a text editor.
+
+## Overclocking
+There are two maintained branches of this repository: one with only the overscan
+check, and one (that I use) which also adds overclocking if there is no overscan.
+Please note that this uses the maximum stable overclocking reported in Magpi's
+article on [overclocking the Raspberry Pi 4](https://magpi.rapsberrypi.org/articles/how-to-overclock-raspberry-pi-4).
+If you wish to use it, make sure you have proper cooling and a good-quality
+power source. I use the official Raspberry Pi power cord and an ICE Tower
+kit from GeeekPi on Amazon (I know, crucify me later). Corsair has a quality
+passive cooling case, as do others. Check some comparisons of different options
+to pick what works best for you. Just *do not* overclock without *some* cooling.
+I am not liable for anything you do to your Pi; I'm just here to facilitate it.
