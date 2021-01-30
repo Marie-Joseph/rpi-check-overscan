@@ -3,5 +3,12 @@
 configFile="/boot/firmware/config.txt";
 
 if [ ! $(awk '/disable_overscan=1/ { print("1") }' $configFile) ]; then
-    echo "disable_overscan=1" >> $configFile;
+    echo "
+# Remove black borders
+disable_overscan=1
+
+# Overclocking
+over_voltage=6
+arm_freq=2147
+gpu_freq=750" >> $configFile;
 fi;
