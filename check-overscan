@@ -13,5 +13,10 @@ if [ ! $found ]; then
     printf "
 # Remove black borders
 disable_overscan=1
+
+# Overclock
+over_voltage=6
+arm_freq=2147
+gpu_freq=750
 " >> $configFile;
 fi;
