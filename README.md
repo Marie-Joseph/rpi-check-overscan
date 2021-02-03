@@ -1,5 +1,5 @@
 # rpi-check-overscan
-A shell script and systemd service unit file to ensure overscan is disabled
+A pure shell script and systemd service unit file to ensure overscan is disabled
 on Raspberry Pis running Debian-based systems.
 
 ## What

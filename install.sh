@@ -5,25 +5,25 @@ binDir="/bin"
 script="check-overscan"
 service="check-overscan.service"
 
-if [ $1 = "-u" ] || [ $1 = "--uninstall" ]; then
-    echo -n "Uninstalling $service... ";
+if [ "$1" = "-u" ] || [ "$1" = "--uninstall" ]; then
+    printf "Uninstalling $service... ";
     systemctl disable $service;
     rm $systemdDir/$service;
     systemctl daemon-reload;
-    echo "Done.";
+    printf "Done.\n";
 
-    echo -n "Uninstalling $script... ";
+    printf "Uninstalling $script... ";
     rm $binDir/$script;
-    echo "Done.";
+    printf "Done.\n";
 else
-    echo -n "Installing $script... ";
+    printf "Installing $script... ";
     cp $script $binDir/;
     chmod +x $binDir/$script;
-    echo "Done.";
+    printf "Done.\n";
 
-    echo -n "Installing $service... ";
+    printf "Installing $service... ";
     cp $service $systemdDir/;
     systemctl daemon-reload;
     systemctl enable $service;
-    echo "Done.";
+    printf "Done.\n";
 fi;
