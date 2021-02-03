@@ -5,6 +5,12 @@ binDir="/bin"
 script="check-overscan"
 service="check-overscan.service"
 
+sh_cp() {
+    while IFS= read -r line || [ -n "$line" ]; do
+        printf "$line\n" >> $2;
+    done < $1;
+}
+
 if [ "$1" = "-u" ] || [ "$1" = "--uninstall" ]; then
     printf "Uninstalling $service... ";
     systemctl disable $service;
@@ -17,12 +23,12 @@ if [ "$1" = "-u" ] || [ "$1" = "--uninstall" ]; then
     printf "Done.\n";
 else
     printf "Installing $script... ";
-    cp $script $binDir/;
+    sh_cp $script $binDir/$script;
     chmod +x $binDir/$script;
     printf "Done.\n";
 
     printf "Installing $service... ";
-    cp $service $systemdDir/;
+    sh_cp $service $systemdDir/$service;
     systemctl daemon-reload;
     systemctl enable $service;
     printf "Done.\n";
