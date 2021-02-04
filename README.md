@@ -2,6 +2,14 @@
 A pure shell script and systemd service unit file to ensure overscan is disabled
 on Raspberry Pis running Debian-based systems.
 
+# Important Note
+It has come to my attention that the problem this service seeks to resolve
+has a different intended resolution. If one creates a file called
+`/etc/default/raspi-firmware-custom` on a vanilla Debian 64-bit Raspberry Pi image
+(and probably others), anything in it is appened to `/boot/firmware/config.txt`.
+As such, this repository is being archived and all development is ceasing. The archive
+now exists primarily as a reference for me in the future.
+
 ## What
 The contents of this directory are simply:
 * `check-overscan`: a shell script to check if `disable_overscan=1` is in the Raspberry Pi's
